@@ -49,7 +49,7 @@ export function Hero() {
           <div className="nagara-aura absolute inset-0 -z-10 rounded-full bg-primary/25 blur-3xl" />
           <div className="nagara-sway">
             <Image
-              src="/nagara-hero.webp"
+              src="/nagara-character.png"
               alt="Nagara, the Serpent Sentinel, a naga warrior with a scaled serpent tail holding a spear"
               width={520}
               height={520}
