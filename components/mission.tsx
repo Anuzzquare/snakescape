@@ -6,12 +6,13 @@ export function Mission() {
           Mission
         </p>
         <h2 className="font-display text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl">
-          {'\u201C'}No voice is too small for the deep to hear.{'\u201D'}
+          {'\u201C'}Protect the people. Listen to their voices. Stand with the
+          truth.{'\u201D'}
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty">
-          Nagara exists to protect the overlooked{'\u2014'}the frightened, the
-          silenced, the ones the world walked past. If you carry a burden, a
-          fear, or a problem no one else will hold, she is already listening.
+          Nagara doesn{'\u2019'}t fight just because she is powerful. She fights
+          because someone has to stand up when the truth is being ignored. If
+          you carry a burden no one else will hold, she is already listening.
         </p>
         <a
           href="#summon"

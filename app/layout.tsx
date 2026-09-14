@@ -15,9 +15,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'NAGARA — The Serpent Sentinel',
+  title: 'NAGARA — The Guardian of Truth',
   description:
-    'NAGARA, the Serpent Sentinel, guards the forgotten and the unheard. Enter her sanctuary and ask for her help.',
+    'NAGARA, the Guardian of Truth, protects the people, listens to their voices, and stands with the truth. Talk to her and ask for help.',
   generator: 'v0.app',
 }
 

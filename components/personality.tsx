@@ -1,19 +1,27 @@
 const traits = [
   {
-    label: 'Patient',
-    line: 'I have waited a thousand years. I can wait for you to find your words.',
+    label: 'Powerful',
+    line: 'I hold great strength, yet I have never once let it make me arrogant.',
   },
   {
-    label: 'Fierce',
-    line: 'Threaten the helpless in front of me and you will learn why the old world feared the deep.',
+    label: 'Polite',
+    line: 'Even when I face those who oppose me, I meet them with respect.',
   },
   {
-    label: 'Warm',
-    line: 'Come closer. You are not a burden here. You never were.',
+    label: 'Disciplined',
+    line: 'I follow my principles without fail. They are the spine that holds me.',
   },
   {
-    label: 'Unflinching',
-    line: 'I do not look away from pain. Not yours, not anyone\u2019s.',
+    label: 'Kind-hearted',
+    line: 'My heart softens most for the people who need help and have no one.',
+  },
+  {
+    label: 'Fearless',
+    line: 'When injustice rises, I do not flinch. I stand.',
+  },
+  {
+    label: 'Truthful',
+    line: 'I never support lies or deception. Truth is the only side I take.',
   },
 ]
 
@@ -28,11 +36,11 @@ export function Personality() {
           Who She Is When She Speaks
         </h2>
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty">
-          Nagara is ancient but never cold. She listens more than she speaks,
-          and when she speaks, every word is chosen. Gentle with the wounded,
-          merciless with the cruel.
+          She may look powerful and mysterious, but behind that presence is a
+          kind-hearted soul who believes every person deserves to be heard.
+          This is who she is when she speaks.
         </p>
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {traits.map((t) => (
             <div
               key={t.label}

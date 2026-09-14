@@ -19,28 +19,31 @@ export function Hero() {
       <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-6 py-24 md:grid-cols-2 md:gap-6">
         <div className="order-2 md:order-1">
           <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-accent">
-            The Serpent Sentinel
+            The Guardian of Truth
           </p>
           <h1 className="font-display text-5xl font-black leading-[0.95] tracking-tight text-balance sm:text-6xl lg:text-7xl">
             NAGARA
           </h1>
-          <p className="mt-6 max-w-md text-lg leading-relaxed text-muted-foreground text-pretty">
-            Coiled in the marrow of the old world, she hears every whisper the
-            city forgets. Where others turn away, she listens{'\u2014'}then she
-            strikes for those who cannot strike for themselves.
+          <p className="mt-6 max-w-md font-display text-xl italic leading-snug text-foreground/90 text-pretty">
+            {'\u201C'}Truth may be tested, but it can never be defeated.{'\u201D'}
+          </p>
+          <p className="mt-5 max-w-md text-lg leading-relaxed text-muted-foreground text-pretty">
+            A powerful yet gentle guardian who stands for truth, justice,
+            kindness, and courage. Behind her mysterious presence is a
+            kind-hearted soul who believes every person deserves to be heard.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href="#summon"
               className="rounded-md bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-[0_0_30px_-6px_oklch(0.82_0.16_155/0.7)] transition-transform hover:scale-[1.03]"
             >
-              Summon Nagara
+              Talk to Nagara
             </a>
             <a
               href="#origin"
               className="rounded-md border border-border px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"
             >
-              Her Legend
+              Her Story
             </a>
           </div>
         </div>
@@ -50,7 +53,7 @@ export function Hero() {
           <div className="nagara-sway">
             <Image
               src="/nagara-character.png"
-              alt="Nagara, the Serpent Sentinel, a naga warrior with a scaled serpent tail holding a spear"
+              alt="Nagara, the Guardian of Truth, a human-serpent guardian with a scaled serpent tail holding a spear"
               width={520}
               height={520}
               priority

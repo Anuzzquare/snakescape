@@ -1,19 +1,23 @@
 const powers = [
   {
-    title: 'Whisper-Sense',
-    body: 'Her forked senses catch fear, lies, and cries for help from miles away. No plea goes unheard.',
+    title: 'Truth Sense',
+    body: 'Nagara can sense when something is wrong and instantly identify deception, no matter how well it is hidden.',
   },
   {
-    title: 'Coil of Ages',
-    body: 'Her serpent tail can shield a child or crush a fortress gate. It is patient, and it never lets go.',
+    title: 'Serpent Transformation',
+    body: 'She can call upon her serpent abilities to protect herself and shield anyone who stands beside her.',
   },
   {
-    title: 'Venom of Truth',
-    body: 'A single touch dissolves illusion and deceit, forcing the corrupt to face what they have hidden.',
+    title: 'Guardian Strength',
+    body: 'Her determination gives her extraordinary strength whenever she is protecting innocent people.',
   },
   {
-    title: 'Shedding',
-    body: 'She sheds wounds like old skin, healing from any blow and rising renewed to guard another day.',
+    title: 'Silent Awareness',
+    body: 'Like a snake, she observes her surroundings carefully and patiently before ever taking action.',
+  },
+  {
+    title: 'Voice of Justice',
+    body: 'Nagara gives people the courage to speak about problems and truths they were once too afraid to share.',
   },
 ]
 
@@ -25,7 +29,7 @@ export function Powers() {
           Powers &amp; Abilities
         </p>
         <h2 className="font-display text-3xl font-bold tracking-tight text-balance sm:text-4xl">
-          The Gifts of the Deep
+          The Gifts of the Guardian
         </h2>
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
           {powers.map((p) => (

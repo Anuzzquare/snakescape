@@ -22,7 +22,7 @@ export function ChatbotDock() {
   const [messages, setMessages] = useState<Msg[]>([
     {
       from: 'nagara',
-      text: "Sssso... a voice reaches the deep. I am Nagara, the Serpent Sentinel. I listen to those the world forgets. Before I can help you, tell me — what is your name?",
+      text: "Greetings. I am Nagara. I may look powerful, but you don't need to be afraid of me. I am here to listen. What is your name?",
     },
   ])
   const [step, setStep] = useState<Step>('name')
@@ -63,7 +63,7 @@ export function ChatbotDock() {
 
   async function submit(final: Answers) {
     setStep('sending')
-    nagaraSay('Hold still. I am carrying your words into the dark...')
+    nagaraSay('Stay a moment. I am carrying your words to where they need to go...')
     try {
       const res = await fetch('/api/help-request', {
         method: 'POST',
@@ -72,11 +72,11 @@ export function ChatbotDock() {
       })
       if (!res.ok) throw new Error('failed')
       nagaraSay(
-        `It is done, ${final.name}. Your request is bound to my coil and my keeper has been alerted. Rest now — you were heard.`,
+        `It is done, ${final.name}. Your request has been carried through, and help has been alerted. You don't have to fight alone — you were heard.`,
       )
     } catch {
       nagaraSay(
-        'The current swallowed my message. Try once more when you are ready, brave one.',
+        'Something blocked my message. Try once more when you are ready, and I will listen again.',
       )
     }
     setStep('done')
@@ -103,22 +103,22 @@ export function ChatbotDock() {
       const next = { ...answers, name: value }
       setAnswers(next)
       setStep('age')
-      nagaraSay(`${value}... a fine name to carry through the dark. Tell me — how many years have you walked this world?`)
+      nagaraSay(`Nice to meet you, ${value}. May I know your age?`)
     } else if (step === 'age') {
       const next = { ...answers, age: value }
       setAnswers(next)
       setStep('location')
-      nagaraSay('Young or weathered, every soul is worth the coil. And from what corner of the earth do you call to me — your city or region?')
+      nagaraSay('Thank you. And where are you from?')
     } else if (step === 'location') {
       const next = { ...answers, location: value }
       setAnswers(next)
       setStep('email')
-      nagaraSay('I know it well; my scales have felt its dust. So that my reply may find you, whisper me your email address.')
+      nagaraSay('If you are comfortable sharing, what is your email address?')
     } else if (step === 'email') {
       const next = { ...answers, email: value }
       setAnswers(next)
       setStep('grievance')
-      nagaraSay('So... tell me. How can I help you? Speak your burden freely — nothing you say will frighten me.')
+      nagaraSay('Thank you for trusting me. Now forget the formalities. Tell me... what is troubling you?')
     } else if (step === 'grievance') {
       const next = { ...answers, grievance: value }
       setAnswers(next)
@@ -172,7 +172,7 @@ export function ChatbotDock() {
               <p className="font-display text-sm font-bold leading-tight">NAGARA</p>
               <p className="flex items-center gap-1.5 text-xs text-accent">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
-                Listening from the deep
+                Here to listen
               </p>
             </div>
             <button

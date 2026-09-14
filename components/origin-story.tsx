@@ -6,22 +6,28 @@ export function OriginStory() {
           Origin
         </p>
         <h2 className="font-display text-3xl font-bold tracking-tight text-balance sm:text-4xl">
-          Born of the Last Coil
+          Born From Betrayal, Reborn in Truth
         </h2>
         <div className="mt-8 space-y-6 text-lg leading-relaxed text-muted-foreground text-pretty">
           <p>
-            Before the cities had names, the Naga guarded the deep wells where
-            memory pooled like water. When the last well was poisoned, its
-            keeper poured her own life into a single egg and sank into the
-            dark. From that egg rose{' '}
-            <span className="font-semibold text-foreground">Nagara</span> {'\u2014'}
-            half-woman, half-serpent, the final Sentinel of a vanished order.
+            Once, <span className="font-semibold text-foreground">Nagara</span>{' '}
+            was surrounded by people who deceived and betrayed her. They tried
+            to break her spirit, and they used snakes to attack her. But they
+            underestimated the truth that lived within her.
           </p>
           <p>
-            She woke beneath a modern city that had buried her wells under
-            concrete and forgotten her name. But the old duty remained wound
-            through her spine: to hear the unheard, to shelter the abandoned,
-            and to answer any voice brave enough to call into the dark.
+            Instead of being defeated, Nagara{'\u2019'}s courage transformed
+            her. She became a mysterious human-serpent guardian{'\u2014'}gaining
+            the strength, awareness, and abilities of a snake while keeping her
+            compassionate human heart.
+          </p>
+          <p>
+            From that day forward, Nagara made a promise:{' '}
+            <span className="font-semibold text-foreground">
+              she would never stand with lies.
+            </span>{' '}
+            She began protecting people, exposing deception, listening to those
+            who were ignored, and fighting for what was right.
           </p>
         </div>
       </div>
