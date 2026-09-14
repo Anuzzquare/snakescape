@@ -163,3 +163,60 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes nagara-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-0.6deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(0.6deg);
+  }
+}
+
+@keyframes nagara-sway {
+  0%,
+  100% {
+    transform: translateX(-8px) skewX(-1.2deg);
+  }
+  50% {
+    transform: translateX(8px) skewX(1.2deg);
+  }
+}
+
+@keyframes nagara-aura {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.08);
+  }
+}
+
+.nagara-float {
+  animation: nagara-float 6s ease-in-out infinite;
+  transform-origin: center bottom;
+  will-change: transform;
+}
+
+.nagara-sway {
+  animation: nagara-sway 9s ease-in-out infinite;
+  transform-origin: center bottom;
+  will-change: transform;
+}
+
+.nagara-aura {
+  animation: nagara-aura 5s ease-in-out infinite;
+  will-change: opacity, transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nagara-float,
+  .nagara-sway,
+  .nagara-aura {
+    animation: none;
+  }
+}

@@ -46,15 +46,17 @@ export function Hero() {
         </div>
 
         <div className="relative order-1 flex justify-center md:order-2">
-          <div className="absolute inset-0 -z-10 rounded-full bg-primary/25 blur-3xl" />
-          <Image
-            src="/nagara-hero.webp"
-            alt="Nagara, the Serpent Sentinel, a naga warrior with a scaled serpent tail holding a spear"
-            width={520}
-            height={520}
-            priority
-            className="w-full max-w-[420px] object-contain drop-shadow-[0_25px_45px_oklch(0.1_0.05_275/0.8)]"
-          />
+          <div className="nagara-aura absolute inset-0 -z-10 rounded-full bg-primary/25 blur-3xl" />
+          <div className="nagara-sway">
+            <Image
+              src="/nagara-hero.webp"
+              alt="Nagara, the Serpent Sentinel, a naga warrior with a scaled serpent tail holding a spear"
+              width={520}
+              height={520}
+              priority
+              className="nagara-float w-full max-w-[420px] object-contain drop-shadow-[0_25px_45px_oklch(0.1_0.05_275/0.8)]"
+            />
+          </div>
         </div>
       </div>
     </section>
