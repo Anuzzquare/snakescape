@@ -35,23 +35,35 @@ export function ChatbotDock() {
     grievance: '',
   })
   const [error, setError] = useState<string | null>(null)
+  const [typing, setTyping] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' })
-  }, [messages, open])
+  }, [messages, typing, open])
 
   useEffect(() => {
-    if (open) inputRef.current?.focus()
-  }, [open, step])
+    if (open && !typing) inputRef.current?.focus()
+  }, [open, step, typing])
 
   const say = (from: Msg['from'], text: string) =>
     setMessages((m) => [...m, { from, text }])
 
+  // Nagara "composes" her reply — the pause scales with how much she has to say,
+  // so she reads as a living presence rather than an instant script.
+  const nagaraSay = (text: string) => {
+    setTyping(true)
+    const delay = Math.min(2200, 700 + text.length * 22)
+    setTimeout(() => {
+      setTyping(false)
+      say('nagara', text)
+    }, delay)
+  }
+
   async function submit(final: Answers) {
     setStep('sending')
-    say('nagara', 'Hold still. I am carrying your words into the dark...')
+    nagaraSay('Hold still. I am carrying your words into the dark...')
     try {
       const res = await fetch('/api/help-request', {
         method: 'POST',
@@ -59,13 +71,11 @@ export function ChatbotDock() {
         body: JSON.stringify(final),
       })
       if (!res.ok) throw new Error('failed')
-      say(
-        'nagara',
+      nagaraSay(
         `It is done, ${final.name}. Your request is bound to my coil and my keeper has been alerted. Rest now — you were heard.`,
       )
     } catch {
-      say(
-        'nagara',
+      nagaraSay(
         'The current swallowed my message. Try once more when you are ready, brave one.',
       )
     }
@@ -93,22 +103,22 @@ export function ChatbotDock() {
       const next = { ...answers, name: value }
       setAnswers(next)
       setStep('age')
-      setTimeout(() => say('nagara', `${value}. A fine name to carry. How many years have you walked this world?`), 350)
+      nagaraSay(`${value}... a fine name to carry through the dark. Tell me — how many years have you walked this world?`)
     } else if (step === 'age') {
       const next = { ...answers, age: value }
       setAnswers(next)
       setStep('location')
-      setTimeout(() => say('nagara', 'And from what corner of the earth do you call to me? Your city or region?'), 350)
+      nagaraSay('Young or weathered, every soul is worth the coil. And from what corner of the earth do you call to me — your city or region?')
     } else if (step === 'location') {
       const next = { ...answers, location: value }
       setAnswers(next)
       setStep('email')
-      setTimeout(() => say('nagara', 'So that my reply may find you, whisper me your email address.'), 350)
+      nagaraSay('I know it well; my scales have felt its dust. So that my reply may find you, whisper me your email address.')
     } else if (step === 'email') {
       const next = { ...answers, email: value }
       setAnswers(next)
       setStep('grievance')
-      setTimeout(() => say('nagara', 'So... tell me. How can I help you? Speak your burden freely.'), 350)
+      nagaraSay('So... tell me. How can I help you? Speak your burden freely — nothing you say will frighten me.')
     } else if (step === 'grievance') {
       const next = { ...answers, grievance: value }
       setAnswers(next)
@@ -190,6 +200,15 @@ export function ChatbotDock() {
                 </p>
               </div>
             ))}
+            {typing && (
+              <div className="flex justify-start" aria-live="polite" aria-label="Nagara is typing">
+                <span className="flex items-center gap-1 rounded-2xl rounded-bl-sm bg-secondary px-4 py-3">
+                  <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-accent [animation-delay:-0.3s]" />
+                  <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-accent [animation-delay:-0.15s]" />
+                  <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-accent" />
+                </span>
+              </div>
+            )}
           </div>
 
           <div className="border-t border-border px-3 py-3">
