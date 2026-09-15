@@ -61,24 +61,46 @@ export function ChatbotDock() {
     }, delay)
   }
 
-  async function submit(final: Answers) {
+  function submit(final: Answers) {
     setStep('sending')
     nagaraSay('Stay a moment. I am carrying your words to where they need to go...')
-    try {
-      const res = await fetch('/api/help-request', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(final),
-      })
-      if (!res.ok) throw new Error('failed')
-      nagaraSay(
-        `It is done, ${final.name}. Your request has been carried through, and help has been alerted. You don't have to fight alone — you were heard.`,
-      )
-    } catch {
-      nagaraSay(
-        'Something blocked my message. Try once more when you are ready, and I will listen again.',
-      )
+
+    const firstSubmission = !window.localStorage.getItem('formsubmit-approved')
+    const form = document.createElement('form')
+    form.method = 'POST'
+    form.action = 'https://formsubmit.co/anupamaanilammus@gmail.com'
+    form.target = firstSubmission ? '_blank' : 'formsubmit-response'
+    form.style.display = 'none'
+
+    const fields = {
+      name: final.name,
+      age: final.age,
+      location: final.location,
+      email: final.email,
+      grievance: final.grievance,
+      _subject: 'Someone Needs Your Help!',
+      _template: 'table',
+      _captcha: 'false',
     }
+
+    Object.entries(fields).forEach(([name, value]) => {
+      const field = document.createElement('input')
+      field.type = 'hidden'
+      field.name = name
+      field.value = value
+      form.appendChild(field)
+    })
+
+    document.body.appendChild(form)
+    form.submit()
+    form.remove()
+    window.localStorage.setItem('formsubmit-approved', 'true')
+
+    nagaraSay(
+      firstSubmission
+        ? 'The first message has opened FormSubmit\'s approval page in a new tab. Approve the address there, then return here for future messages.'
+        : `It is done, ${final.name}. Your request has been carried through, and help has been alerted. You don't have to fight alone — you were heard.`,
+    )
     setStep('done')
   }
 
@@ -146,6 +168,7 @@ export function ChatbotDock() {
 
   return (
     <>
+      <iframe name="formsubmit-response" title="FormSubmit response" className="hidden" />
       {!open && (
         <button
           onClick={() => setOpen(true)}

@@ -24,6 +24,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+## Email setup
+
+The help chat submits requests through FormSubmit to
+`anupamaanilammus@gmail.com`. On the first submission, FormSubmit opens its
+approval page in a new tab. After the address is approved, later submissions
+remain on this page and use a hidden response frame.
+
 ## Learn More
 
 To learn more, take a look at the following resources:
