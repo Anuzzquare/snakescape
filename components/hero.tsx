@@ -25,7 +25,7 @@ export function Hero() {
             NAGARA
           </h1>
           <p className="mt-6 max-w-md font-display text-xl italic leading-snug text-foreground/90 text-pretty">
-            {'\u201C'}Truth may be tested, but it can never be defeated.{'\u201D'}
+            {'\u201C'}Truth may be tested, but it can never be defeated.{ '\u201D' }
           </p>
           <p className="mt-5 max-w-md text-lg leading-relaxed text-muted-foreground text-pretty">
             A powerful yet gentle guardian who stands for truth, justice,
@@ -47,7 +47,6 @@ export function Hero() {
             </a>
           </div>
         </div>
-
         <div className="relative order-1 flex justify-center md:order-2">
           <div className="nagara-aura absolute inset-0 -z-10 rounded-full bg-primary/25 blur-3xl" />
           <div className="nagara-sway">

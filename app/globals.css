@@ -196,6 +196,125 @@
   }
 }
 
+@keyframes opening-character-rise {
+  from {
+    opacity: 0;
+    transform: translateY(48px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes opening-title-reveal {
+  from {
+    opacity: 0;
+    letter-spacing: 0.8em;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 0.2em;
+    transform: translateY(0);
+  }
+}
+
+@keyframes opening-scan {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes opening-scale-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(0.94);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.04);
+  }
+}
+
+@keyframes opening-glow-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translate(-50%, -50%) scale(0.85);
+  }
+  50% {
+    opacity: 0.85;
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+}
+
+@keyframes opening-progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes opening-exit {
+  to {
+    opacity: 0;
+    transform: scale(1.06);
+    visibility: hidden;
+  }
+}
+
+.opening-screen {
+  animation: opening-exit 1.1s ease 3.5s forwards;
+}
+
+.opening-noise {
+  opacity: 0.22;
+  background-image: radial-gradient(oklch(0.82 0.16 155 / 0.2) 0.6px, transparent 0.6px);
+  background-size: 5px 5px;
+  mask-image: radial-gradient(circle at center, black, transparent 72%);
+}
+
+.opening-scanline {
+  animation: opening-scan 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.opening-scale {
+  animation: opening-scale-pulse 4s ease-in-out infinite;
+}
+
+.opening-scale-two {
+  animation-delay: -1.7s;
+}
+
+.opening-glow {
+  animation: opening-glow-pulse 3.5s ease-in-out infinite;
+}
+
+.opening-character {
+  animation: opening-character-rise 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.opening-kicker,
+.opening-subtitle,
+.opening-progress {
+  animation: opening-character-rise 0.8s ease 0.7s both;
+}
+
+.opening-title {
+  animation: opening-title-reveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+}
+
+.opening-progress span {
+  animation: opening-progress 3.1s ease-in-out both;
+}
+
 .nagara-float {
   animation: nagara-float 6s ease-in-out infinite;
   transform-origin: center bottom;
@@ -219,4 +338,23 @@
   .nagara-aura {
     animation: none;
   }
+
+  .opening-screen,
+  .opening-scanline,
+  .opening-scale,
+  .opening-glow,
+  .opening-character,
+  .opening-kicker,
+  .opening-title,
+  .opening-subtitle,
+  .opening-progress,
+  .opening-progress span {
+    animation: none;
+  }
+
+  .opening-screen {
+    opacity: 0;
+    visibility: hidden;
+  }
+
 }
