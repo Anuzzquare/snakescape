@@ -28,7 +28,7 @@ export function SiteFooter() {
     <footer id="summon" className="border-t border-border/60 py-16">
       <div className="mx-auto max-w-4xl px-6 text-center">
         <h2 className="font-display text-2xl font-bold tracking-tight text-balance">
-          {"Have something you can't say to anyone?"}
+          Have something you can&apos;t say to anyone?
         </h2>
         <p className="mt-3 font-display text-lg font-semibold uppercase tracking-[0.15em] text-accent">
           Nagara is listening.
