@@ -140,7 +140,7 @@ export function ChatbotDock() {
       const next = { ...answers, email: value }
       setAnswers(next)
       setStep('grievance')
-      nagaraSay('Thank you for trusting me. Now forget the formalities. Tell me... what is troubling you?')
+      nagaraSay('I have your address, and I will include a reply from Nagara after we finish. Now forget the formalities. Tell me... what is troubling you?')
     } else if (step === 'grievance') {
       const next = { ...answers, grievance: value }
       setAnswers(next)

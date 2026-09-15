@@ -4,6 +4,10 @@ const powers = [
     body: 'Nagara can sense when something is wrong and instantly identify deception, no matter how well it is hidden.',
   },
   {
+    title: 'All-Seeing Truth',
+    body: 'No secret can remain hidden from Nagara. She can uncover the truth behind every story and reveal what others cannot see.',
+  },
+  {
     title: 'Serpent Transformation',
     body: 'She can call upon her serpent abilities to protect herself and shield anyone who stands beside her.',
   },
